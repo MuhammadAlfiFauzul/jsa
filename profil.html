@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JSA Internet</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <style>
+    body {
+      background-color: #f8f9fa; /* putih susu */
+    }
+
+     /* Navbar */
+    .navbar-custom {
+  background: linear-gradient(to right, #d6d4d4 0%, #f3efef 50%, #ffffff 100%);
+  padding: 10px 0;
+}
+    .navbar-brand img {
+      height: 50px; /* logo lebih besar */
+    }
+    .navbar-custom .nav-link {
+      color: #484848; 
+      font-size: 16px; 
+      font-weight: 500;
+      margin-left: 9px; 
+      transition: color 0.3s;
+    }
+    .navbar-custom .nav-link:hover {
+      color: #e1ff00;
+    }
+    .navbar-custom .nav-link.active {
+  color: #ffff00; /* kuning lebih terang */
+  font-size: 17px;
+  font-weight: 500;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.6); /* bayangan hitam tipis */
+}
+
+
+
+    /* Carousel */
+    #home .carousel-item img {
+      max-height: 550px; 
+      object-fit: cover; /* gambar crop otomatis rapi */
+    }
+    .carousel-indicators [data-bs-target] {
+      background-color: #ff9800; /* warna indikator */
+    }
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      filter: invert(1); /* panah biar kontras */
+    }
+
+    /* Section Spacing */
+    section {
+      padding: 30px 0;
+      
+    }
+    
+    .hero-section {
+      position: relative;
+      text-align: center;
+      color: white;
+    }
+    .hero-section img {
+      width: 100%;
+      max-height: 700px;
+      object-fit: cover;
+    
+    }
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .icon-box {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .icon-box:hover {
+      transform: translateY(-5px);
+    }
+    .icon-box i {
+      font-size: 40px;
+      color: #ff9800;
+      margin-bottom: 10px;
+    }
+
+    --footer---
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+        }
+
+        .footer {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #ffffff;
+            padding: 40px 0 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #FFD700, #FFA500, #FFD700);
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: nowrap;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .footer-section {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .footer-section h3 {
+            color: #FFD700;
+            font-size: 15px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 3px;
+            background: #FFD700;
+            border-radius: 2px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: start;
+            margin-bottom: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateX(5px);
+        }
+
+        .contact-item i {
+            color: #FFD700;
+            margin-right: 10px;
+            margin-top: 2px;
+            font-size: 14px;
+        }
+
+        .contact-item .contact-text {
+            flex: 1;
+        }
+
+        .contact-item .contact-label {
+            font-size: 11px;
+            color: #aaa;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .contact-item .contact-value {
+            color: #fff;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .social-links a {
+            width: 35px;
+            height: 35px;
+            background: rgba(255, 215, 0, 0.1);
+            border: 2px solid #FFD700;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FFD700;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .social-links a:hover {
+            background: #FFD700;
+            color: #1a1a1a;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 13px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            position: relative;
+        }
+
+        .footer-links a::before {
+            content: '→';
+            margin-right: 8px;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #FFD700;
+            padding-left: 10px;
+        }
+
+        .footer-links a:hover::before {
+            opacity: 1;
+            margin-right: 5px;
+        }
+
+        .operational-time {
+            background: rgba(255, 215, 0, 0.1);
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            border-left: 3px solid #FFD700;
+        }
+
+        .operational-time .time-title {
+            font-size: 12px;
+            color: #FFD700;
+            margin-bottom: 4px;
+            font-weight: 600;
+        }
+
+        .operational-time .time-value {
+            font-size: 13px;
+            color: #fff;
+        }
+
+        .footer-bottom {
+            background: rgba(0, 0, 0, 0.3);
+            margin-top: 30px;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: #aaa;
+            font-size: 13px;
+        }
+
+        .footer-bottom strong {
+            color: #FFD700;
+        }
+
+        @media (max-width: 1200px) {
+            .footer-container {
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+            
+            .footer-section {
+                flex: 1 1 calc(50% - 10px);
+                min-width: 200px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                padding: 0 20px;
+            }
+
+            .footer-section {
+                flex: 1 1 100%;
+                width: 100%;
+            }
+
+            .footer {
+                padding: 30px 0 0;
+            }
+            
+            .footer-section h3 {
+                font-size: 16px;
+                margin-bottom: 12px;
+            }
+            
+            .contact-item .contact-value {
+                font-size: 14px;
+            }
+            
+            .footer-links a {
+                font-size: 14px;
+            }
+            
+            .operational-time {
+                padding: 15px;
+            }
+            
+            .operational-time .time-title {
+                font-size: 13px;
+            }
+            
+            .operational-time .time-value {
+                font-size: 14px;
+            }
+            
+            .social-links {
+                margin-top: 20px;
+            }
+            
+            .social-links a {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+            
+            .footer-bottom {
+                margin-top: 40px;
+                padding: 25px 20px;
+            }
+            
+            .footer-bottom p {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer-section h3 {
+                font-size: 15px;
+            }
+            
+            .contact-item {
+                margin-bottom: 15px;
+            }
+            
+            .footer-links li {
+                margin-bottom: 12px;
+            }
+            
+    
+        }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-custom shadow-sm sticky-top">
+  <div class="container">
+    <!-- Logo -->
+    <a class="navbar-brand" href="index.html">
+      <img src="assets/img/logo.jpg" alt="Logo JSA">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+   <!-- Menu -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+        <!-- Menu tentang dengan Submenu -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDaftar" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Tentang JSA
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDaftar">
+    <li><a class="dropdown-item" href="profil.html">Profil JSA</a></li>
+    <li><a class="dropdown-item" href="keunggulan.html">Keunggulan layanan internet JSA</a></li>
+    <li><a class="dropdown-item" href="brosur.html">Brosur</a></li>
+  </ul>
+        </li>
+        
+
+        <!-- Menu Daftar dengan Submenu -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDaftar" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Daftar
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDaftar">
+    <li><a class="dropdown-item" href="daftar.html">Form Pendaftaran</a></li>
+    <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+  </ul>
+        </li>
+
+        
+        <li class="nav-item"><a class="nav-link" href="panduan.html">Panduan</a></li>
+        <li class="nav-item"><a class="nav-link" href="kontak.html">Kontak</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero-section">
+  <img src="assets/img/profile5.jpg" alt="Tentang JSA">
+</section>
+
+<!-- About Content -->
+<div class="container py-5">
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <img src="assets/img/tentang1.jpg" class="img-fluid rounded shadow" alt="Tentang JSA">
+    </div>
+    <div class="col-md-6">
+      <h2 class="fw-bold mb-3">Siapa Kami?</h2>
+      <p>
+        PT. Jalur Satu Jaman (JSA) adalah perusahaan <b>Internet Service Provider</b> 
+        yang berkomitmen menyelenggarakan layanan internet dengan kualitas terbaik 
+        dan harga terjangkau. Kami hadir untuk memenuhi kebutuhan internet rumah, 
+        kantor, sekolah, hingga reseller di seluruh Indonesia.
+      </p>
+      <ul>
+        <li>✔ Internet cepat & stabil</li>
+        <li>✔ Pelayanan FAST RESPON</li>
+        <li>✔ Harga Flat</li>
+        <li>✔ Bebas </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+    </div>
+  </div>
+</div>
+
+<section id="visi-misi" style="padding:50px 0; background:#f9f9f9;">
+  <div style="text-align:center; margin-bottom:40px;">
+    <h2 style="font-size:28px; font-weight:bold;">VISI & MISI</h2>
+  </div>
+
+  <div style="display:flex; justify-content:center; gap:30px; flex-wrap:wrap;">
+    
+    <!-- BERMANFAAT -->
+    <div style="background:#fff; padding:25px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.08); width:280px; text-align:center;">
+      <div style="font-size:40px; color:green; margin-bottom:15px;">🎯</div>
+      <h3 style="font-size:18px; font-weight:bold; color:#e1ff00; margin-bottom:10px;">BERMANFAAT</h3>
+      <p style="color:#555; font-size:14px;">Memberikan manfaat dan kepuasan kepada pelanggan dengan koneksi internet yang murah dan berkualitas.</p>
+    </div>
+    
+    <!-- BERKEMBANG -->
+    <div style="background:#fff; padding:25px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.08); width:280px; text-align:center;">
+      <div style="font-size:40px; color:#f4c542; margin-bottom:15px;">📊</div>
+      <h3 style="font-size:18px; font-weight:bold; color:#e1ff00; margin-bottom:10px;">BERKEMBANG</h3>
+      <p style="color:#555; font-size:14px;">Usaha berkembang dengan tetap menjaga kualitas koneksi demi menjaga kepuasan pelanggan.</p>
+    </div>
+    
+    <!-- BERKAH -->
+    <div style="background:#fff; padding:25px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.08); width:280px; text-align:center;">
+      <div style="font-size:40px; color:green; margin-bottom:15px;">✔️</div>
+      <h3 style="font-size:18px; font-weight:bold; color:#e1ff00; margin-bottom:10px;">BERKAH</h3>
+      <p style="color:#555; font-size:14px;">Kebahagiaan terasa jika usaha ini menjadi berkah bagi semua, baik pelanggan, investor, stakeholder, dan karyawan.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+        <div class="footer-container">
+            <!-- Contact Section -->
+            <div class="footer-section">
+                <h3><i class="fas fa-phone-alt"></i> Hubungi Kami</h3>
+                <div class="contact-item">
+                    <i class="fas fa-headset"></i>
+                    <div class="contact-text">
+                        <span class="contact-label">Call Center</span>
+                        <span class="contact-value">(021) 2411525</span>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <div class="contact-text">
+                        <span class="contact-label">WhatsApp</span>
+                        <span class="contact-value">(+62) 81388882258</span>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" title="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <!-- Operational Hours -->
+            <div class="footer-section">
+                <h3><i class="fas fa-clock"></i> Operasional</h3>
+                <div class="operational-time">
+                    <div class="time-title">Setiap Hari</div>
+                    <div class="time-value">04:00 WIB - 01:00 WIB</div>
+                </div>
+                <div class="operational-time">
+                    <div class="time-title">Sabtu - Minggu</div>
+                    <div class="time-value">04:00 WIB - 01:00 WIB</div>
+                </div>
+            </div>
+
+            <!-- Packages -->
+            <div class="footer-section">
+                <h3><i class="fas fa-box"></i> Paket & Harga</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Internet Home</a></li>
+                    <li><a href="#">Internet Sekolah</a></li>
+                    <li><a href="#">Internet Perusahaan</a></li>
+                    <li><a href="#">Internet Kemitraan</a></li>
+                    <li><a href="#">Internet Entertainment</a></li>
+                </ul>
+            </div>
+
+            <!-- Information -->
+            <div class="footer-section">
+                <h3><i class="fas fa-info-circle"></i> Informasi</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Cara Pembayaran</a></li>
+                    <li><a href="#">Speed Test</a></li>
+                    <li><a href="#">MRTG</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+
+            <!-- Head Office -->
+            <div class="footer-section">
+                <h3><i class="fas fa-map-marker-alt"></i> Head Office</h3>
+                <div class="contact-item">
+                    <i class="fas fa-building"></i>
+                    <div class="contact-text">
+                        <span class="contact-value">Jl. Purnabakti Shanata No.08, Karang Sari, Kec. Neglasari, Kota Tangerang, Banten 15121</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 <strong>Jalur Satu Aman</strong> | Semua Hak Dilindungi</p>
+        </div>
+    </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

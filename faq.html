@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JSA Internet</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa; /* putih susu */
+    }
+
+    /* Navbar */
+    .navbar-custom {
+      background-color: #dfdfdf; /* abu muda */
+      padding: 10px 0; /* tinggi navbar */
+    }
+    .navbar-brand img {
+      height: 50px; /* logo lebih besar */
+    }
+    .navbar-custom .nav-link {
+      color: #484848; 
+      font-size: 16px; 
+      font-weight: 500;
+      margin-left: 9px; 
+      transition: color 0.3s;
+    }
+    .navbar-custom .nav-link:hover {
+      color: #e1ff00;
+    }
+    .navbar-custom .nav-link.active {
+  color: #ffff00; /* kuning lebih terang */
+  font-size: 17px;
+  font-weight: 500;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.6); /* bayangan hitam tipis */
+}
+
+
+    /* Carousel */
+    #home .carousel-item img {
+      max-height: 550px; 
+      object-fit: cover; /* gambar crop otomatis rapi */
+    }
+    .carousel-indicators [data-bs-target] {
+      background-color: #ff9800; /* warna indikator */
+    }
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      filter: invert(1); /* panah biar kontras */
+    }
+
+    /* Section Spacing */
+    section {
+      padding: 40px 0;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-custom shadow-sm sticky-top">
+  <div class="container">
+    <!-- Logo -->
+    <a class="navbar-brand" href="index.html">
+      <img src="assets/img/logo.jpg" alt="Logo JSA">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+   <!-- Menu -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+        <!-- Menu tentang dengan Submenu -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDaftar" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Tentang JSA
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDaftar">
+    <li><a class="dropdown-item" href="profil.html">Profil JSA</a></li>
+    <li><a class="dropdown-item" href="keunggulan.html">Keunggulan layanan internet JSA</a></li>
+    <li><a class="dropdown-item" href="brosur.html">Brosur</a></li>
+  </ul>
+        </li>
+        
+
+        <!-- Menu Daftar dengan Submenu -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDaftar" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Daftar
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDaftar">
+    <li><a class="dropdown-item" href="daftar.html">Form Pendaftaran</a></li>
+    <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+  </ul>
+        </li>
+
+        
+        <li class="nav-item"><a class="nav-link" href="panduan.html">Panduan</a></li>
+        <li class="nav-item"><a class="nav-link" href="kontak.html">Kontak</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Navbar copy paste sama dengan index.html -->
+
+<div class="container py-5">
+  <h2 class="text-center mb-4">FAQ - Pertanyaan yang Sering Diajukan</h2>
+
+  <div class="accordion" id="faqAccordion">
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="heading1">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+          1. Bagaimana berlangganan internet JSA ?
+        </button>
+      </h2>
+      <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Untuk berlangganan internet JSA silakan isi form pendaftaran dan tunggu konfirmasi dari tim kami.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="heading2">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+          2. Apakah ada syarat pemasangan internet JSA ?
+        </button>
+      </h2>
+      <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Tidak ada syarat khusus, cukup foto KTP dan mengisi formulir pernyataan berlangganan.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="heading3">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+          3. Apakah rumah kontrakan bisa untuk instalasi internet JSA ?
+        </button>
+      </h2>
+      <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Bisa, untuk berlangganan internet JSA tidak mensyaratkan rumah pribadi.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="heading4">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+          4. Apakah ada biaya pemasangan ?
+        </button>
+      </h2>
+      <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Biaya pemasangan hanya Rp 200.000 sudah termasuk free paket 31 hari pertama.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="heading5">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+          5. Apakah rumah saya sudah tercover jaringan JSA ?
+        </button>
+      </h2>
+      <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Untuk mengecek ketersediaan jaringan silakan isi form pendaftaran dan tim akan mengkonfirmasi ketersediaan jaringan kurang dari 24 jam.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="heading6">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+          6. Layanan apa saja yang tersedia di JSA ?
+        </button>
+      </h2>
+      <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Tersedia layanan untuk seluruh home pass, rumah, kantor, sekolah, dan juga untuk reseller/mitra.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="heading7">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
+          7. Apakah berlangganan internet JSA terkena Fair Usage Policy (FUP) ?
+        </button>
+      </h2>
+      <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Tidak ada FUP untuk layanan internet JSA.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="heading8">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq8">
+          8. Apakah dikenakan denda, jika saya terlambat bayar?
+        </button>
+      </h2>
+      <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Tidak dikenakan denda, hanya saja layanan terputus sementara dan aktif kembali setelah dibayarkan.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="heading9">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq9">
+          9. Bagaimana saya melakukan penyampaian kendala ?
+        </button>
+      </h2>
+      <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Penyampaian kendala dapat disampaikan di grup WhatsApp khusus pelanggan dan akan ditangani secara responsif.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="heading10">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq10">
+          10. Apakah terdapat biaya tambahan jika saya melakukan upgrade paket ?
+        </button>
+      </h2>
+      <div id="faq10" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Baik untuk upgrade maupun downgrade tidak dikenakan tambahan biaya, cukup membayar sesuai dengan paket yang dipilih.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
