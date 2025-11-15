@@ -240,18 +240,6 @@ section {
 }
 
 /* Social Section */
-.social-section {
-  padding: 60px 0;
-  background: var(--light-bg);
-}
-
-.social-links-large {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
 .social-link {
   width: 80px;
   height: 80px;
@@ -289,6 +277,17 @@ section {
   background: #ffebe9;
 }
 
+/* Instagram */
+.social-link.instagram {
+  color: #d62976;
+  background: #ffe3f0;
+}
+
+/* TikTok */
+.social-link.tiktok {
+  color: #000000;
+  background: #e8e8e8;
+}
 
 /* Footer (global) */
    * {
