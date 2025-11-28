@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- Style CSS -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/daftar.css">
 
   <!-- Chat Widget -->
   <script server="jkt" wid-key="ea0c6ac2-a10c-11f0-ab04-f23c94eb396d" src="https://jsa-weld.vercel.app/js/widget-chat.js"></script>
@@ -73,63 +73,84 @@
   </div>
 </nav>
 
-<!-- ========================= FORM PENDAFTARAN ========================= -->
+<!-- =========================FORM PENDAFTARAN ========================= -->
 <div class="container py-5">
   <h2 class="text-center mb-4">Form Pendaftaran JSA Internet</h2>
 
-  <form class="p-4 border rounded bg-light shadow-sm">
+  <form class="p-4 border rounded bg-light shadow-sm" method="POST" action="backend/submit_pendaftaran.php">
 
-    <!-- Nama -->
+    
     <div class="mb-3">
       <label for="nama" class="form-label">Nama</label>
-      <input type="text" class="form-control" id="nama" placeholder="Masukkan nama lengkap" required>
+      <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan nama lengkap" required>
     </div>
 
-    <!-- Telepon -->
+   
     <div class="mb-3">
       <label for="telp" class="form-label">No. Telp / WhatsApp</label>
-      <input type="text" class="form-control" id="telp" placeholder="08xxxxxxxxxx" required>
+      <input type="text" class="form-control" id="telp" name="telp" placeholder="08xxxxxxxxxx" required>
     </div>
 
-    <!-- Kota / Kabupaten -->
+ 
     <div class="mb-3">
       <label for="kota" class="form-label">Kota / Kabupaten</label>
-      <input type="text" class="form-control" id="kota" placeholder="Contoh: Kota Tangerang" required>
+      <input type="text" class="form-control" id="kota" name="kota" placeholder="Contoh: Kota Tangerang" required>
     </div>
 
-    <!-- Kecamatan -->
+
     <div class="mb-3">
       <label for="kecamatan" class="form-label">Kecamatan</label>
-      <input type="text" class="form-control" id="kecamatan" placeholder="Contoh: Neglasari" required>
+      <input type="text" class="form-control" id="kecamatan" name="kecamatan" placeholder="Contoh: Neglasari" required>
     </div>
 
-    <!-- Kelurahan -->
+    
     <div class="mb-3">
       <label for="kelurahan" class="form-label">Kelurahan</label>
-      <input type="text" class="form-control" id="kelurahan" placeholder="Contoh: Karang Sari" required>
+      <input type="text" class="form-control" id="kelurahan" name="kelurahan" placeholder="Contoh: Karang Sari" required>
     </div>
 
-    <!-- Alamat Lengkap -->
+   
     <div class="mb-3">
       <label for="alamat" class="form-label">Alamat Lengkap</label>
-      <textarea class="form-control" id="alamat" rows="3"
+      <textarea class="form-control" id="alamat" name="alamat" rows="3"
         placeholder="Nama Jalan, No Rumah, RT/RW, Patokan lokasi" required></textarea>
     </div>
 
-    <!-- Submit -->
+    
     <button type="submit" class="btn btn-primary w-100">Daftar Sekarang</button>
+
+  <!-- Kontak Admin -->
+<div class="text-center mt-4">
+    <p class="mb-2"><strong>Atau hubungi admin secara langsung</strong></p>
+
+    <div class="d-flex gap-3 justify-content-center flex-wrap">
+
+        <a href="https://wa.me/6281388882258" 
+           class="btn btn-success btn-lg px-4 shadow-sm d-flex align-items-center"
+           target="_blank">
+            <i class="bi bi-whatsapp me-2" style="font-size: 1.4rem;"></i>
+            WhatsApp Kami
+        </a>
+
+        <a href="tel:0212411525" 
+           class="btn btn-warning btn-lg px-4 shadow-sm d-flex align-items-center">
+            <i class="bi bi-telephone-fill me-2" style="font-size: 1.4rem;"></i>
+            (021) 2411525
+        </a>
+
+    </div>
+</div>
 
   </form>
 </div>
 
 
-<!-- ========================= FOOTER ========================= -->
+
+<!-- Footer -->
 <footer class="footer">
   <div class="footer-container">
-
     <div class="footer-section">
       <h3><i class="fas fa-phone-alt"></i> Hubungi Kami</h3>
-
       <div class="contact-item">
         <i class="fas fa-headset"></i>
         <div class="contact-text">
@@ -137,7 +158,6 @@
           <span class="contact-value">(021) 2411525</span>
         </div>
       </div>
-
       <div class="contact-item">
         <i class="fab fa-whatsapp"></i>
         <div class="contact-text">
@@ -145,7 +165,6 @@
           <span class="contact-value">(+62) 81388882258</span>
         </div>
       </div>
-
       <div class="social-links">
         <a href="#"><i class="fab fa-facebook-f"></i></a>
         <a href="#"><i class="fas fa-envelope"></i></a>
@@ -159,10 +178,7 @@
         <div class="time-title">Senin - Jumat</div>
         <div class="time-value">09:00 WIB - 17:00 WIB</div>
       </div>
-      <div class="operational-time">
-        <div class="time-title">Sabtu - Minggu</div>
-        <div class="time-value">09:00 WIB - 17:00 WIB</div>
-      </div>
+     
     </div>
 
     <div class="footer-section">
@@ -179,10 +195,10 @@
     <div class="footer-section">
       <h3><i class="fas fa-info-circle"></i> Informasi</h3>
       <ul class="footer-links">
-        <li><a href="#">Cara Pembayaran</a></li>
+        <li><a href="panduan.html">Cara Pembayaran</a></li>
         <li><a href="#">Speed Test</a></li>
         <li><a href="#">MRTG</a></li>
-        <li><a href="#">FAQ</a></li>
+        <li><a href="faq.html">FAQ</a></li>
       </ul>
     </div>
 
@@ -191,13 +207,10 @@
       <div class="contact-item">
         <i class="fas fa-building"></i>
         <div class="contact-text">
-          <span class="contact-value">
-            Jl. Purnabakti Shanata No.08, Karang Sari, Kec. Neglasari, Kota Tangerang, Banten 15121
-          </span>
+          <span class="contact-value">Jl. Purnabakti Shanata No.08, Karang Sari, Kec. Neglasari, Kota Tangerang, Banten 15121</span>
         </div>
       </div>
     </div>
-
   </div>
 
   <div class="footer-bottom">

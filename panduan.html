@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- Style CSS -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/panduan.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <!-- Chat Widget -->
@@ -108,7 +108,7 @@
 <!-- FULLSCREEN IMAGE SCRIPT -->
 <script>
 function openFullscreenImage(src) {
-    // Buat elemen fullscreen
+    
     const fs = document.createElement("div");
     fs.className = "fullscreen-view";
 
@@ -119,10 +119,10 @@ function openFullscreenImage(src) {
 
     document.body.appendChild(fs);
 
-    // Tutup saat klik X
+   
     fs.querySelector(".close-fs").onclick = () => fs.remove();
 
-    // Tutup saat klik area luar gambar
+
     fs.onclick = (e) => {
         if (e.target === fs) fs.remove();
     };
@@ -136,7 +136,7 @@ document.querySelectorAll(".panduan-img").forEach(img => {
 });
 </script>
 
-<!-- Footer & Bootstrap JS -->
+
 <!-- Footer -->
 <footer class="footer">
   <div class="footer-container">
@@ -169,10 +169,7 @@ document.querySelectorAll(".panduan-img").forEach(img => {
         <div class="time-title">Senin - Jumat</div>
         <div class="time-value">09:00 WIB - 17:00 WIB</div>
       </div>
-      <div class="operational-time">
-        <div class="time-title">Sabtu - Minggu</div>
-        <div class="time-value">09:00 WIB - 17:00 WIB</div>
-      </div>
+      
     </div>
 
     <div class="footer-section">
@@ -189,10 +186,10 @@ document.querySelectorAll(".panduan-img").forEach(img => {
     <div class="footer-section">
       <h3><i class="fas fa-info-circle"></i> Informasi</h3>
       <ul class="footer-links">
-        <li><a href="#">Cara Pembayaran</a></li>
+        <li><a href="panduan.html">Cara Pembayaran</a></li>
         <li><a href="#">Speed Test</a></li>
         <li><a href="#">MRTG</a></li>
-        <li><a href="#">FAQ</a></li>
+        <li><a href="faq.html">FAQ</a></li>
       </ul>
     </div>
 
