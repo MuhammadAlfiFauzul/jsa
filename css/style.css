@@ -43,14 +43,14 @@ body {
 * Carousel */
     #home .carousel-item img {
       max-height: 550px; 
-      object-fit: cover; /* gambar crop otomatis rapi */
+      object-fit: cover; 
     }
     .carousel-indicators [data-bs-target] {
-      background-color: #ff9800; /* warna indikator */
+      background-color: #ff9800; 
     }
     .carousel-control-prev-icon,
     .carousel-control-next-icon {
-      filter: invert(1); /* panah biar kontras */
+      filter: invert(1); 
     }
 
     /* Section Spacing */
