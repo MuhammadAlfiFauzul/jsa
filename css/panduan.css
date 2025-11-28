@@ -1,7 +1,45 @@
 
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 body {
   background-color: #f8f9fa;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+.animate-header {
+  animation: slideDown 0.8s ease-out;
+}
+
+.animate-header-delay {
+  animation: fadeIn 1s ease-out 0.3s both;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Navbar (global) */
@@ -30,6 +68,15 @@ body {
   background: linear-gradient(135deg, #ffcc00, #eeff07);
   color: #fff !important;
   box-shadow: 0 4px 12px rgba(255, 152, 0, 0.5);
+  transform: translateY(-2px);
+}
+
+.navbar-brand img {
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover img {
+  transform: scale(1.05);
 }
 
 

@@ -1,7 +1,17 @@
 
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 body {
   background-color: #f8f9fa;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }
 
 /* Navbar (global) */
@@ -30,6 +40,15 @@ body {
   background: linear-gradient(135deg, #ffcc00, #eeff07);
   color: #fff !important;
   box-shadow: 0 4px 12px rgba(255, 152, 0, 0.5);
+  transform: translateY(-2px);
+}
+
+.navbar-brand img {
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover img {
+  transform: scale(1.05);
 }
 
 
@@ -38,17 +57,36 @@ body {
 /* ==========================================
    🏠 INDEX PAGE
 ========================================== */
-* Carousel */
+
     #home .carousel-item img {
-      max-height: 550px; 
-      object-fit: cover; 
+      max-height: 550px;
+      object-fit: cover;
+      will-change: transform;
+      transition: transform 0.6s ease-in-out;
     }
+
+    .carousel-item {
+      transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+    }
+
     .carousel-indicators [data-bs-target] {
-      background-color: #ff9800; 
+      background-color: #ff9800;
+      transition: all 0.3s ease;
     }
+
+    .carousel-indicators [data-bs-target]:hover {
+      transform: scale(1.2);
+    }
+
     .carousel-control-prev-icon,
     .carousel-control-next-icon {
-      filter: invert(1); 
+      filter: invert(1);
+      transition: transform 0.3s ease;
+    }
+
+    .carousel-control-prev:hover .carousel-control-prev-icon,
+    .carousel-control-next:hover .carousel-control-next-icon {
+      transform: scale(1.15);
     }
 
     
@@ -75,11 +113,29 @@ body {
     flex: 1;
     text-align: center;
     padding: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 12px;
+  }
+
+  .feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(255, 215, 0, 0.2);
   }
 
   .feature-item i {
     font-size: 38px;
     color: #FFD700;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+
+  .feature-item:hover i {
+    transform: scale(1.15);
+  }
+
+  .feature-item h5 {
+    margin-top: 10px;
+    font-weight: 600;
+    transition: color 0.3s ease;
   }
 
   .feature-divider {
@@ -129,6 +185,13 @@ body {
   max-width: 280px;
   border-radius: 20px;
   box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  will-change: transform;
+}
+
+.testimonial-img:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.2);
 }
 
 /* Mobile grid img */
@@ -136,6 +199,11 @@ body {
   width: 100%;
   border-radius: 15px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-grid-img:active {
+  transform: scale(0.98);
 }
 
 /* Optional: spacing fix for small screens */
