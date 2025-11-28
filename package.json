@@ -1,0 +1,12 @@
+{
+  "name": "jsa-internet-website",
+  "version": "1.0.0",
+  "description": "JSA Internet Company Website",
+  "scripts": {
+    "build": "echo 'Static HTML site - no build needed'",
+    "start": "echo 'Static HTML site ready'"
+  },
+  "keywords": ["html", "static", "website"],
+  "author": "JSA Internet",
+  "license": "ISC"
+}
