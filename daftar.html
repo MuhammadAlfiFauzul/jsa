@@ -78,21 +78,24 @@
 <div class="container py-5">
   <h2 class="text-center mb-4">Form Pendaftaran JSA Internet</h2>
 
-  <form class="p-4 border rounded bg-light shadow-sm" method="POST" action="backend/submit_pendaftaran.php">
+  <div id="alertContainer"></div>
 
-    
+  <form id="formPendaftaran" class="p-4 border rounded bg-light shadow-sm">
+
+
     <div class="mb-3">
       <label for="nama" class="form-label">Nama</label>
-      <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan nama lengkap" required>
+      <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan nama lengkap" required minlength="3">
     </div>
 
-   
+
     <div class="mb-3">
       <label for="telp" class="form-label">No. Telp / WhatsApp</label>
-      <input type="text" class="form-control" id="telp" name="telp" placeholder="08xxxxxxxxxx" required>
+      <input type="tel" class="form-control" id="telp" name="telp" placeholder="08xxxxxxxxxx" required pattern="^[0-9+\-\s()]+$">
+      <small class="text-muted">Format: 08xxxxxxxxxx atau +62xxxxxxxxxx</small>
     </div>
 
- 
+
     <div class="mb-3">
       <label for="kota" class="form-label">Kota / Kabupaten</label>
       <input type="text" class="form-control" id="kota" name="kota" placeholder="Contoh: Kota Tangerang" required>
@@ -104,21 +107,27 @@
       <input type="text" class="form-control" id="kecamatan" name="kecamatan" placeholder="Contoh: Neglasari" required>
     </div>
 
-    
+
     <div class="mb-3">
       <label for="kelurahan" class="form-label">Kelurahan</label>
       <input type="text" class="form-control" id="kelurahan" name="kelurahan" placeholder="Contoh: Karang Sari" required>
     </div>
 
-   
+
     <div class="mb-3">
       <label for="alamat" class="form-label">Alamat Lengkap</label>
       <textarea class="form-control" id="alamat" name="alamat" rows="3"
-        placeholder="Nama Jalan, No Rumah, RT/RW, Patokan lokasi" required></textarea>
+        placeholder="Nama Jalan, No Rumah, RT/RW, Patokan lokasi" required minlength="10"></textarea>
     </div>
 
-    
-    <button type="submit" class="btn btn-primary w-100">Daftar Sekarang</button>
+
+    <button type="submit" class="btn btn-primary w-100" id="submitBtn">
+      <span id="btnText">Daftar Sekarang</span>
+      <span id="btnSpinner" class="d-none">
+        <span class="spinner-border spinner-border-sm me-2" role="status"></span>
+        Mengirim...
+      </span>
+    </button>
 
   <!-- Kontak Admin -->
 <div class="text-center mt-4">
@@ -126,14 +135,14 @@
 
     <div class="d-flex gap-3 justify-content-center flex-wrap">
 
-        <a href="https://wa.me/6281388882258" 
+        <a href="https://wa.me/6281388882258"
            class="btn btn-success btn-lg px-4 shadow-sm d-flex align-items-center"
            target="_blank">
             <i class="bi bi-whatsapp me-2" style="font-size: 1.4rem;"></i>
             WhatsApp Kami
         </a>
 
-        <a href="tel:0212411525" 
+        <a href="tel:0212411525"
            class="btn btn-warning btn-lg px-4 shadow-sm d-flex align-items-center">
             <i class="bi bi-telephone-fill me-2" style="font-size: 1.4rem;"></i>
             (021) 2411525
@@ -144,6 +153,70 @@
 
   </form>
 </div>
+
+<script>
+const SUPABASE_URL = 'https://cfnvvbuwftjufddxlhpc.supabase.co';
+
+document.getElementById('formPendaftaran').addEventListener('submit', async function(e) {
+  e.preventDefault();
+
+  const submitBtn = document.getElementById('submitBtn');
+  const btnText = document.getElementById('btnText');
+  const btnSpinner = document.getElementById('btnSpinner');
+  const alertContainer = document.getElementById('alertContainer');
+
+  btnText.classList.add('d-none');
+  btnSpinner.classList.remove('d-none');
+  submitBtn.disabled = true;
+
+  const formData = {
+    nama: document.getElementById('nama').value.trim(),
+    telp: document.getElementById('telp').value.trim(),
+    kota: document.getElementById('kota').value.trim(),
+    kecamatan: document.getElementById('kecamatan').value.trim(),
+    kelurahan: document.getElementById('kelurahan').value.trim(),
+    alamat: document.getElementById('alamat').value.trim()
+  };
+
+  try {
+    const response = await fetch(`${SUPABASE_URL}/functions/v1/submit-pendaftaran`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    });
+
+    const result = await response.json();
+
+    if (response.ok && result.success) {
+      alertContainer.innerHTML = `
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          <i class="bi bi-check-circle-fill me-2"></i>
+          <strong>Berhasil!</strong> ${result.message}
+          <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+      `;
+      document.getElementById('formPendaftaran').reset();
+    } else {
+      throw new Error(result.error || 'Terjadi kesalahan');
+    }
+  } catch (error) {
+    alertContainer.innerHTML = `
+      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <i class="bi bi-exclamation-triangle-fill me-2"></i>
+        <strong>Gagal!</strong> ${error.message || 'Tidak dapat mengirim data. Silakan coba lagi atau hubungi admin.'}
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+      </div>
+    `;
+  } finally {
+    btnText.classList.remove('d-none');
+    btnSpinner.classList.add('d-none');
+    submitBtn.disabled = false;
+    alertContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+});
+</script>
 
 
 
